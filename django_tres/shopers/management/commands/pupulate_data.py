@@ -10,8 +10,7 @@ import csv
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        print('hola mundo voy a popular data!')
-        # /Users/yurley.sanchez/Desktop/yurley/dp3/django_tres/shopers/management/commands/data_import.csv
+
         path = './shopers/management/commands/data_import.csv'
         is_fitst_row = True 
         count_of_client_added = 0
@@ -34,10 +33,11 @@ class Command(BaseCommand):
                     renovation_date = row[7]
                     renovation_date = datetime.strptime(renovation_date, '%d/%m/%y')
                     renovation_date = timezone.make_aware(renovation_date, timezone.get_default_timezone())
-                    
+
                     vehicle_data = {
                         'type_vehicle': row[4],
                         'registration': row[5],
+                        'secure_value': int(row[6].replace('.', '')),
                         'renovation_date': renovation_date,
                     }
 

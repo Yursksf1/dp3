@@ -29,6 +29,7 @@ class Vehicle(models.Model):
 
         ]
     )
+    secure_value = models.PositiveIntegerField(default=0)
     registration = models.CharField(max_length=10)
     renovation_date = models.DateField()
 
