@@ -20,5 +20,5 @@ from myapp import views
 urlpatterns = [
     path('', views.index),
     path('mascotas', views.mascotas),
-    path('propietairos', views.propietairos),
+    path('propietarios', views.propietarios),
 ]
