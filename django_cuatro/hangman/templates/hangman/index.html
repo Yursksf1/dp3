@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}hangman{% endblock %}
+
+{% block content %}
+{% for char in list_char %}
+    <p>{{ char }}</p>
+{% endfor %}
+{% endblock %}
