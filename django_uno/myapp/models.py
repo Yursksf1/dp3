@@ -8,7 +8,6 @@ class Propietario(models.Model):
         default='Minino',
     )
 
-    
     def __str__(self):
         return self.name
 
