@@ -1,9 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}hangman{% endblock %}
+{% block title %} hangman {% endblock %}
+
 
 {% block content %}
-{% for char in list_char %}
-    <p>{{ char }}</p>
-{% endfor %}
+    <div>
+        Pista: 
+        <p> {{ current_word.clue }}</p>
+
+    </div>
+
+    {% for char_w in current_word.hidden_word %}
+        __
+    {% endfor %}
+
+    <section class="grid-1">
+        {% for char in list_char %}
+            <div class="item-1">
+                {{ char }}
+            </div>
+        {% endfor %}
+    </section>
+
+
+
+
 {% endblock %}
