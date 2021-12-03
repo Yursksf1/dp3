@@ -19,8 +19,8 @@ def mascotas(request):
 
     for mascota in mascotas:
         message = message + '''
-        {} </br>
-        '''.format(mascota.name)
+        {} - {} </br>
+        '''.format(mascota.name, mascota.propietario.name )
     message = message + """
     </br>
     <a href="../myapp"> atras</a>
