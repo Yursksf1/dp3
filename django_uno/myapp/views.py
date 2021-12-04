@@ -6,11 +6,15 @@ from myapp.models import Mascota, Propietario
 # Create your views here.
 
 def index(request):
+
+    return render(request, template_name='index.html')
+
+def index_example(request):
     message = """
         <a href="mascotas"> mascotas</a> </br>
         <a href="propietarios"> propietarios</a> </br>
     """
-    return HttpResponse(message)
+    return render(request, template_name='index_example.html')
 
 
 def mascotas(request):
@@ -43,15 +47,16 @@ def mascotas(request):
 
 def propietarios(request):
     propietarios = Propietario.objects.all()
-    message = ""
 
-    for propietairo in propietarios:
-        message = message + '''
-        {} </br>
-        '''.format(propietairo.name)
-    message = message + """
-        </br>
-        <a href=".."> atras</a>
-    """
-    return HttpResponse(message)
+    context = {
+        'propietarios': propietarios,
+        'title': 'Solo propietarios'
+    }
+    template_name = 'propietarios.html'
+
+    return render(
+        request,
+        template_name=template_name,
+        context=context
+    )
 

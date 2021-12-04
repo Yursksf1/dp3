@@ -8,8 +8,18 @@
     <title>Test</title>
 </head>
 <body>
-<h> solo propietarios</h>
-<a href="index.html"> atras</a>
+<h1> {{ title }}</h1>
+    <ul>
+        {% for propietario in propietarios %}
+         <li>
+             {{ propietario.name }}
+         </li>
+        {% endfor %}
+    </ul>
+
+
+
+<a href=".."> atras</a>
 
 </body>
 </html>
