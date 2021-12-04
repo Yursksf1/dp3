@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} hangman {% endblock %}
+
+
+{% block content %}
+    <div>
+        Pista:
+        <p> {{ current_word.clue }}</p>
+
+    </div>
+
+    {% for char_w in current_word.hidden_word %}
+        __
+    {% endfor %}
+
+    <section class="grid-1">
+        {% for char in list_char %}
+            <div class="item-1">
+                {{ char }}
+            </div>
+        {% endfor %}
+    </section>
+
+    <input id="input-value-1" name="input-value-1" type="hidden" value="a">
+
+    <button id="button-save">
+        save
+    </button>
+
+
+{% endblock %}
