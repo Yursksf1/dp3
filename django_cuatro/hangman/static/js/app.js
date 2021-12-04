@@ -7,11 +7,29 @@ $(document).ready(PageReady);
 
 function PageReady() {
     console.log('hola PageReady')
+      $(`#${DOM_IDS.BUTTON_SAVE}`).on('click', listenButton);
+
+}
+
+var DOM_IDS = {
+    BUTTON_SAVE: 'button-save',
+    INPUT_VALUE: "input-value-1",
+}
+
+function listenButton(){
+    var value = $(`#${DOM_IDS.INPUT_VALUE}`).val();
+    console.log('this is the value: '+value)
+    triggerGameTurn(1, value, triggerGameTurnSuccess, triggerGameTurnError )
+}
+
+function triggerGameTurnSuccess() {
+    console.log('triggerGameTurnSuccess')
 }
 
 
-
-console.log('hola app')
+function triggerGameTurnError() {
+    console.log('triggerGameTurnSuccess')
+}
 
 // SERVICE
 
