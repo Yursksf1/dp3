@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="{% url 'app:create' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button id='boton_agregar_tabla'> agregar tabla1 </button>
+    <button class="btn btn-secondary btn-block mt-5" type="submit">sent!</button>
+
+  </form>
+    <br>
+<div id="formulario_oculto" hidden>
+    <input type="text" name="input-name" id="input-name" value="test">
+    <button  id="guardar_form_uno" class="btn btn-secondary btn-block mt-5">sent!</button>
+</div>
+
+
+{% endblock %}
