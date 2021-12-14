@@ -17,7 +17,14 @@ def show_index(request):
     )
 
 def check_response(request):
-    print('envio la respuestas')
+    print(request.POST)
+    print('''
+    TODO: validar las preguntas con las repuesta. 
+    pregunta_4: 15
+    donde 4 es el id de la pregunta y el 
+    15 es el id de la respuesta 
+    en el objeto respuesta hay un atributo de 'is_correct_answer' si este es true, entonces la respuesta es correcta 
+    ''')
     return render(
         request,
         'index.html',
