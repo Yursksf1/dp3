@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<style>
+    .uno {
+        color: blueviolet;
+        background-color: pink;
+        font-size: 20mm;
+        text-align: center;
+    }
+    .boton_respuesta {
+        color: blueviolet;
+        background-color: white;
+        width: 100px;
+        height: 50px;
+        font-size: 100 px;
+    }
+
+    .label {
+        font-family: 'Lucida Sans',
+         'Lucida Sans Regular',
+         'Lucida Grande',
+         'Lucida Sans Unicode',
+         Geneva,
+         Verdana,
+         sans-serif;
+    }
+</style>
+<title>Ejercicio 3</title>
+<!-- <h1> <form> <input> <button></button>  -->
+
+
+
+<body>
+    <form>
+        <div class='uno'">Preguntas</div>
+        <table , td border="1px solid black">
+            <td>
+                <tc style="color: black;font-size: 30 mm; font-family: 'Courier New', Courier, monospace;">Propietario</tc>
+            </td>
+            <td>
+                <tc style="color: black;font-size: 30 mm; font-family: 'Courier New', Courier, monospace;">Edad</tc>
+            </td>
+
+            <tr>
+                <td>
+                    <tc>
+                        <label for="textInput" >Ingresa tu nombre: </label>
+                        <input id="textInput" class="custom" size="40" style="width : 150px; height:20px;">
+                    </tc>
+                </td>
+                <td>
+                    <tc>
+                        <label for="textInput">Ingresa tu Ciudad: </label>
+                        <input id="textInput" class="custom" size="40">
+                    </tc>
+                </td>
+            </tr>
+        </table>
+
+        <h1>1) Pregunta</h1>
+        <label class="label">
+            En que mes se celebra la semana santa?
+        </label>
+
+        <ul>
+            <li>a) Octubre</li>
+            <li>b) Marzo</li>
+        </ul>
+        <button id="myBtn" class='boton_respuesta' > a </button>
+        <button id="myBtn2" class='boton_respuesta' > b </button>
+
+        <h1>2) Pregunta</h1>
+        <label class="label">El sol es una estrella o un satélite?</label>
+
+        <ul>
+            <li>a) satélite</li>
+            <li>b) Estrella</li>
+        </ul>
+
+        <button id="myBtn3" class='boton_respuesta' > a </button>
+        <button id="myBtn4" class='boton_respuesta' > b </button>
+
+    </form>
+</body>
+<script>
+    document.getElementById("myBtn").addEventListener("click", miFuncErr);
+    document.getElementById("myBtn2").addEventListener("click", miFunc);
+
+    document.getElementById("myBtn3").addEventListener("click", miFuncErr);
+    document.getElementById("myBtn4").addEventListener("click", miFunc);
+
+    function miFunc() {
+      alert('Respuesta correcta');
+    }
+    function miFuncErr() {
+      alert('Respuesta Incorrecta');
+    }
+
+
+  </script>
+
+
+</html>
