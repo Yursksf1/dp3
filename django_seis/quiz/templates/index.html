@@ -30,54 +30,31 @@
 
 
 <body>
-    <form>
+    <form action="check_response" method="post">
+    {% csrf_token %}
         <div class='uno'">Preguntas</div>
-        <table , td border="1px solid black">
-            <td>
-                <tc style="color: black;font-size: 30 mm; font-family: 'Courier New', Courier, monospace;">Propietario</tc>
-            </td>
-            <td>
-                <tc style="color: black;font-size: 30 mm; font-family: 'Courier New', Courier, monospace;">Edad</tc>
-            </td>
+        {% for q in questions %}
+            <h1>{{ forloop.counter }} ) Pregunta</h1>
+            <label class="label">
+                 {{ q.description }}
+            </label>
 
-            <tr>
-                <td>
-                    <tc>
-                        <label for="textInput" >Ingresa tu nombre: </label>
-                        <input id="textInput" class="custom" size="40" style="width : 150px; height:20px;">
-                    </tc>
-                </td>
-                <td>
-                    <tc>
-                        <label for="textInput">Ingresa tu Ciudad: </label>
-                        <input id="textInput" class="custom" size="40">
-                    </tc>
-                </td>
-            </tr>
-        </table>
+            <ol>
+                {% for r in reponses %}
+                    {% if r.question.id == q.id %}
+                        <li>
+                            <input type="radio" name="pregunta_{{ q.id }}" value="{{ r.id }}">
+                            {{ r.description }}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
 
-        <h1>1) Pregunta</h1>
-        <label class="label">
-            En que mes se celebra la semana santa?
-        </label>
 
-        <ul>
-            <li>a) Octubre</li>
-            <li>b) Marzo</li>
-        </ul>
-        <button id="myBtn" class='boton_respuesta' > a </button>
-        <button id="myBtn2" class='boton_respuesta' > b </button>
-
-        <h1>2) Pregunta</h1>
-        <label class="label">El sol es una estrella o un satélite?</label>
-
-        <ul>
-            <li>a) satélite</li>
-            <li>b) Estrella</li>
-        </ul>
-
-        <button id="myBtn3" class='boton_respuesta' > a </button>
-        <button id="myBtn4" class='boton_respuesta' > b </button>
+        {% endfor %}
+        <button>
+            enviar
+        </button>
 
     </form>
 </body>
