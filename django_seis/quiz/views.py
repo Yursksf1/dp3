@@ -25,6 +25,12 @@ def check_response(request):
     15 es el id de la respuesta 
     en el objeto respuesta hay un atributo de 'is_correct_answer' si este es true, entonces la respuesta es correcta 
     ''')
+
+    # q = Question.objects.filter(id=4)
+    # r = Response.objects.filter(id=15)
+    # if r.is_correct_answer:
+    #     print('some')
+
     return render(
         request,
         'index.html',
